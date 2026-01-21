@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CineRoulette - Рулетка Кино</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="casino-bg"></div>
+	<div class="particles" id="particles"></div>
+	
+	<div class="container">
+		<header class="header">
+			<h1 class="logo">
+				<span class="logo-icon">🎰</span>
+				<span class="logo-text">Cine<span class="accent">Roulette</span></span>
+			</h1>
+			<p class="tagline">Испытай удачу — найди свой фильм!</p>
+		</header>
+
+		<section class="filters-section">
+			<h2 class="section-title">🎬 Настрой свою удачу</h2>
+			<div class="filters-grid">
+				<div class="filter-group">
+					<label class="filter-label">Тип контента</label>
+					<div class="filter-buttons" id="typeFilter">
+						<button class="filter-btn active" data-value="all">Всё</button>
+						<button class="filter-btn" data-value="movie">Фильм</button>
+						<button class="filter-btn" data-value="series">Сериал</button>
+						<button class="filter-btn" data-value="animation">Анимация</button>
+					</div>
+				</div>
+				<div class="filter-group">
+					<label class="filter-label">Минимальный рейтинг</label>
+					<div class="rating-slider">
+						<input type="range" id="ratingFilter" min="0" max="10" step="0.5" value="0">
+						<span class="rating-value" id="ratingValue">0+</span>
+					</div>
+				</div>
+				<div class="filter-group">
+					<label class="filter-label">Год выхода</label>
+					<div class="year-inputs">
+						<input type="number" id="yearFrom" placeholder="От" min="1900" max="2025">
+						<span class="year-separator">—</span>
+						<input type="number" id="yearTo" placeholder="До" min="1900" max="2025">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slot-machine-section">
+			<div class="slot-machine">
+				<div class="slot-frame">
+					<div class="slot-header">
+						<div class="jackpot-lights">
+							<span class="light"></span>
+							<span class="light"></span>
+							<span class="light"></span>
+							<span class="light"></span>
+							<span class="light"></span>
+						</div>
+						<h3 class="slot-title">ЖАНРЫ</h3>
+						<div class="jackpot-lights">
+							<span class="light"></span>
+							<span class="light"></span>
+							<span class="light"></span>
+							<span class="light"></span>
+							<span class="light"></span>
+						</div>
+					</div>
+					<div class="slots-container">
+						<div class="slot-window">
+							<div class="slot-reel" id="reel1">
+								<div class="slot-item">🎭 Драма</div>
+							</div>
+						</div>
+						<div class="slot-window">
+							<div class="slot-reel" id="reel2">
+								<div class="slot-item">💥 Экшн</div>
+							</div>
+						</div>
+						<div class="slot-window">
+							<div class="slot-reel" id="reel3">
+								<div class="slot-item">😂 Комедия</div>
+							</div>
+						</div>
+					</div>
+					<div class="slot-footer">
+						<div class="win-line"></div>
+					</div>
+				</div>
+				<button class="spin-button" id="spinButton">
+					<span class="spin-text">КРУТИТЬ</span>
+					<span class="spin-icon">🎲</span>
+				</button>
+			</div>
+		</section>
+
+		<section class="result-section" id="resultSection">
+			<div class="result-card">
+				<div class="result-poster">
+					<img id="moviePoster" src="" alt="Постер">
+					<div class="poster-overlay">
+						<span class="result-type" id="resultType"></span>
+						<span class="result-rating" id="resultRating"></span>
+					</div>
+				</div>
+				<div class="result-info">
+					<h2 class="result-title" id="resultTitle"></h2>
+					<div class="result-meta">
+						<span class="result-year" id="resultYear"></span>
+						<span class="result-genres" id="resultGenres"></span>
+					</div>
+					<p class="result-description" id="resultDescription"></p>
+					<button class="spin-again-btn" id="spinAgainBtn">🎰 Крутить ещё раз</button>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<p>CineRoulette © 2025 — Найди свой идеальный фильм</p>
+		</footer>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
