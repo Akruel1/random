@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Genre Jackpot</title>
+		<link rel="preconnect" href="https://picsum.photos" />
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<div class="bg">
+			<div class="bg-glow"></div>
+			<div class="bg-grid"></div>
+		</div>
+
+		<header class="top">
+			<div class="brand">
+				<div class="brand-mark" aria-hidden="true">
+					<div class="mark-ring"></div>
+					<div class="mark-core"></div>
+				</div>
+				<div class="brand-text">
+					<div class="brand-title">Genre Jackpot</div>
+					<div class="brand-subtitle">крути жанры как 777 и получай выбор</div>
+				</div>
+			</div>
+			<div class="top-actions">
+				<button class="btn btn-ghost" id="btnRandomize">Случайные фильтры</button>
+				<button class="btn btn-primary" id="btnSpin">
+					<span class="btn-primary-glow" aria-hidden="true"></span>
+					Крутить
+				</button>
+			</div>
+		</header>
+
+		<main class="layout">
+			<section class="panel filters" aria-label="Фильтры">
+				<div class="panel-head">
+					<div class="panel-title">Фильтры</div>
+					<div class="panel-hint">можно не трогать, тогда будет максимально случайно</div>
+				</div>
+				<div class="fields">
+					<div class="field">
+						<label class="label" for="type">Тип</label>
+						<select class="control" id="type">
+							<option value="any">Любой</option>
+							<option value="movie">Фильм</option>
+							<option value="series">Сериал</option>
+							<option value="animation">Анимация</option>
+						</select>
+					</div>
+
+					<div class="field">
+						<label class="label" for="minRating">Рейтинг от <span id="minRatingValue">0.0</span></label>
+						<input class="control range" id="minRating" type="range" min="0" max="10" step="0.1" value="0" />
+						<div class="range-row">
+							<div class="range-min">0</div>
+							<div class="range-max">10</div>
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="label">Год</label>
+						<div class="row">
+							<input class="control" id="yearFrom" inputmode="numeric" placeholder="От" />
+							<input class="control" id="yearTo" inputmode="numeric" placeholder="До" />
+						</div>
+						<div class="field-note" id="yearHint"></div>
+					</div>
+				</div>
+			</section>
+
+			<section class="panel slot" aria-label="Рулетка жанров">
+				<div class="panel-head">
+					<div class="panel-title">Рулетка жанров</div>
+					<div class="panel-hint" id="slotHint">крутится по жанрам, которые подходят под фильтры</div>
+				</div>
+
+				<div class="slot-frame" role="group" aria-label="Барабаны">
+					<div class="slot-reel" data-reel="0">
+						<div class="slot-window">
+							<div class="slot-track" id="reel0"></div>
+						</div>
+					</div>
+					<div class="slot-reel" data-reel="1">
+						<div class="slot-window">
+							<div class="slot-track" id="reel1"></div>
+						</div>
+					</div>
+					<div class="slot-reel" data-reel="2">
+						<div class="slot-window">
+							<div class="slot-track" id="reel2"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="slot-footer">
+					<div class="chips" id="pickedGenres" aria-label="Выпавшие жанры"></div>
+					<div class="status" id="status"></div>
+				</div>
+			</section>
+
+			<section class="panel result" aria-label="Результат">
+				<div class="panel-head">
+					<div class="panel-title">Выпало</div>
+					<div class="panel-hint">фильтр + жанры = рекомендация</div>
+				</div>
+
+				<div class="card" id="card">
+					<div class="poster">
+						<img id="poster" alt="" />
+						<div class="poster-shine" aria-hidden="true"></div>
+					</div>
+					<div class="meta">
+						<div class="kicker" id="kicker"></div>
+						<div class="title" id="title"></div>
+						<div class="facts" id="facts"></div>
+						<div class="desc" id="desc"></div>
+						<div class="tags" id="tags"></div>
+						<div class="card-actions">
+							<button class="btn btn-ghost" id="btnSpinAgain">Крутить ещё</button>
+							<button class="btn btn-ghost" id="btnClear">Сбросить фильтры</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="empty" id="empty">
+					<div class="empty-title">Нажми “Крутить”</div>
+					<div class="empty-subtitle">или выставь фильтры и проверим удачу</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer-inner">
+				<div class="footer-note">Локальная база примеров, без внешних API</div>
+				<div class="footer-note">Сделано как слот-рулетка жанров</div>
+			</div>
+		</footer>
+
+		<script type="module" src="./app.js"></script>
+	</body>
+</html>
