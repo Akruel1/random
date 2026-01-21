@@ -252,7 +252,7 @@ export const genreLabels = {
 	fantasy: "фэнтези",
 	mystery: "мистика",
 	romance: "романтика",
-	sci-fi: "sci-fi",
+	"sci-fi": "sci-fi",
 	thriller: "триллер"
 }
 
