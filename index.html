@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cinema Roulette</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>CINEMA ROULETTE</h1>
+			<div class="neon-line"></div>
+		</header>
+
+		<div class="controls">
+			<div class="filter-group">
+				<label>Тип</label>
+				<select id="type-filter">
+					<option value="all">Все</option>
+					<option value="movie">Фильм</option>
+					<option value="series">Сериал</option>
+					<option value="animation">Анимация</option>
+				</select>
+			</div>
+			<div class="filter-group">
+				<label>Жанр</label>
+				<select id="genre-filter">
+					<option value="all">Все</option>
+					<option value="Sci-Fi">Sci-Fi</option>
+					<option value="Drama">Драма</option>
+					<option value="Fantasy">Фэнтези</option>
+					<option value="Action">Экшн</option>
+					<option value="Horror">Ужасы</option>
+					<option value="Comedy">Комедия</option>
+					<option value="Crime">Криминал</option>
+				</select>
+			</div>
+			<div class="filter-group">
+				<label>Мин. Рейтинг</label>
+				<select id="rating-filter">
+					<option value="0">Любой</option>
+					<option value="8">8+</option>
+					<option value="9">9+</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="roulette-machine">
+			<div class="roulette-window">
+				<div class="slot-container">
+					<div class="slot" id="slot1">
+						<div class="slot-inner">
+							<span>?</span>
+						</div>
+					</div>
+					<div class="slot" id="slot2">
+						<div class="slot-inner">
+							<span>?</span>
+						</div>
+					</div>
+					<div class="slot" id="slot3">
+						<div class="slot-inner">
+							<span>?</span>
+						</div>
+					</div>
+				</div>
+				<div class="win-line"></div>
+			</div>
+			<button id="spin-btn" class="spin-button">КРУТИТЬ</button>
+		</div>
+
+		<div id="result-area" class="result-area hidden">
+			<div class="result-card">
+				<div class="poster-wrapper">
+					<img id="result-poster" src="" alt="Poster">
+				</div>
+				<div class="info-wrapper">
+					<h2 id="result-title">Title</h2>
+					<div class="meta-tags">
+						<span id="result-type" class="tag">Type</span>
+						<span id="result-genre" class="tag">Genre</span>
+						<span id="result-year" class="tag">Year</span>
+						<span id="result-rating" class="tag rating">Rating</span>
+					</div>
+					<p id="result-desc">Description goes here...</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="data.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
