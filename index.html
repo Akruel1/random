@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Genre Roulette 777</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="app">
+		<header class="hero">
+			<div class="brand">
+				<div class="brand__mark">777</div>
+				<div class="brand__text">
+					<h1>Genre Roulette</h1>
+					<p>Spin for a title that matches your mood.</p>
+				</div>
+			</div>
+			<button class="primary" id="spinButton">Spin roulette</button>
+		</header>
+
+		<section class="panel filters">
+			<div class="panel__header">
+				<h2>Filters</h2>
+				<p>Leave empty for a fully random spin.</p>
+			</div>
+			<div class="filters__grid">
+				<label class="control">
+					<span>Type</span>
+					<select id="typeFilter">
+						<option value="any">Any</option>
+						<option value="movie">Movie</option>
+						<option value="series">Series</option>
+						<option value="animation">Animation</option>
+					</select>
+				</label>
+				<label class="control">
+					<span>Rating from</span>
+					<div class="range">
+						<input type="range" id="ratingFilter" min="0" max="10" step="0.5" value="0">
+						<span id="ratingValue">0.0</span>
+					</div>
+				</label>
+				<label class="control">
+					<span>Year from</span>
+					<input type="number" id="yearFrom" placeholder="1990" min="1950" max="2035">
+				</label>
+				<label class="control">
+					<span>Year to</span>
+					<input type="number" id="yearTo" placeholder="2025" min="1950" max="2035">
+				</label>
+			</div>
+		</section>
+
+		<section class="panel roulette-panel">
+			<div class="panel__header">
+				<h2>Roulette</h2>
+				<p>Genres spin like a slot machine.</p>
+			</div>
+			<div class="roulette">
+				<div class="roulette__frame">
+					<div class="slot" id="slot1">---</div>
+					<div class="slot" id="slot2">---</div>
+					<div class="slot" id="slot3">---</div>
+				</div>
+				<div class="roulette__line">777</div>
+			</div>
+			<div class="chips" id="genreChips"></div>
+		</section>
+
+		<section class="panel result-panel">
+			<div class="panel__header">
+				<h2>Result</h2>
+				<p id="notice">Ready to spin.</p>
+			</div>
+			<div class="result-card">
+				<div class="result-card__image">
+					<img id="posterImage" src="https://picsum.photos/seed/roulette/600/900" alt="Poster">
+				</div>
+				<div class="result-card__content">
+					<div class="result-card__meta" id="resultMeta">---</div>
+					<h3 id="resultTitle">Spin the roulette</h3>
+					<p id="resultDescription">Use filters or go fully random to discover a movie, series, or animation.</p>
+					<div class="result-card__genres" id="resultGenres"></div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
